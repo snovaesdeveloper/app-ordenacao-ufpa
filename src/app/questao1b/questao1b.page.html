@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>questao1b</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+   <h4 style="text-align: center;"> Qual e a complexidade no tempo do algoritmo? Explique. </h4>
+  </div>
+
+
+
+  <div>
+
+    <ion-card>
+      <div class="page">
+        A complexidade de tempo do algoritmo QuickSort é geralmente expressa como O(n log n) em média e O(n^2) no pior caso. Isso significa que o tempo de execução do algoritmo cresce proporcionalmente ao tamanho da entrada, mas de forma não linear.
+
+O QuickSort utiliza a estratégia "dividir para conquistar", onde o array de entrada é dividido em subarrays menores, ordenados separadamente e, em seguida, combinados para obter o array ordenado completo. O pivô é escolhido e os elementos são rearranjados em torno dele, dividindo o array em duas partes. Esse processo de divisão é realizado recursivamente até que cada subarray contenha apenas um elemento.
+
+A complexidade de tempo O(n log n) no caso médio ocorre quando o array é dividido em partes aproximadamente iguais em cada iteração. Nesse caso, o algoritmo é eficiente, pois a divisão equilibrada leva a um número razoável de comparações e trocas.
+
+No entanto, no pior caso, onde o array já está ordenado ou quase ordenado, o QuickSort pode ter uma complexidade de tempo de O(n^2). Isso ocorre porque o pivô escolhido não divide o array em partes iguais, resultando em uma quantidade desequilibrada de elementos em cada subarray. Isso leva a um número significativo de comparações e trocas, tornando o algoritmo menos eficiente.
+
+É importante mencionar que existem variações do algoritmo QuickSort que buscam mitigar o pior caso, como a escolha do pivô de forma aleatória ou a utilização de algoritmos de ordenação diferentes para subarrays pequenos.
+
+Quanto à criação de uma página em Ionic justificada com margem de 20, você pode adicionar o seguinte estilo CSS à página em questão:
+      </div>
+    </ion-card>
+  </div>
+
+</ion-content>

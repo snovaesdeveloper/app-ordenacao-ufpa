@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>questao1a</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <br>
+  <ion-label>
+    <b style="text-align: center;"> Questao 1. </b>
+    <p> Implemente em uma linguagem de programac¸ao a sua escolha o algoritmo </p>
+    <p> de ordenação QuickSort com o pivo sendo o elemento do meio. Em seguida, trabalhe os itens abaixo.</p>
+
+  </ion-label>
+  <br>
+
+  <ion-label>
+    <b style="text-align: center;"> A. </b>
+    Use uma sequencia aleatoria de numeros inteiros entre 1 e 100 como entrada do
+    algoritmo e apresente o print da execução.
+  </ion-label>
+
+  <br>
+
+
+  <h2>Sequência Original:</h2>
+<p>{{ sequence }}</p>
+<h2>Sequência Ordenada:</h2>
+<p>{{ sortedSequence }}</p>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" color="success"  [disabled]="isSorting" (click)="startSorting()"  > Iniciar
+
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="danger" [disabled]="!isSorting" (click)="resetSorting()" > Resetar
+
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
+
+
+</ion-content>

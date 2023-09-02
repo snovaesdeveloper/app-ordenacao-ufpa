@@ -1,0 +1,130 @@
+<ion-content>
+
+</ion-content>
+<!-- Formulario Funcionario dados pessoais  -->
+<ion-content>
+  <form [formGroup]="form" *ngIf="form" style="margin-bottom: 20%;">
+    <!-- Dados pessoais -->
+    <ion-row>
+
+      <ion-col size-sm>
+
+
+
+        <ion-card-content>
+
+          <ion-card class="ion-no-padding ion-no-margin custom-card">
+
+
+
+
+
+
+
+
+            <ion-item>
+              <ion-label>Opcoes Ordenacao</ion-label>
+              <ion-badge slot="end" [color]="(form.get('opcoesOrdenacao').valid)? 'none': 'warning'">
+                {{(form.get('opcoesOrdenacao').valid)? '': '*'}} </ion-badge>
+              <ion-select [(ngModel)]="formsOrdenacao.tipoOrdenacao" placeholder="Selecione" formControlName="opcoesOrdenacao">
+                <ion-select-option *ngFor="let item of opcoesOrdenacao" ion [value]="item.valor">{{item.label}}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+
+
+
+
+            <ion-item>
+              <ion-label>Opcoes de Valores</ion-label>
+              <ion-badge slot="end" [color]="(form.get('opcoesDeValores').valid)? 'none': 'warning'">
+                {{(form.get('opcoesDeValores').valid)? '': '*'}} </ion-badge>
+              <ion-select [(ngModel)]="formsOrdenacao.tipoDeValores" placeholder="Selecione" formControlName="opcoesDeValores">
+                <ion-select-option *ngFor="let item of opcoesDeValores" [value]="item.valor">{{item.label}}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+
+
+
+          </ion-card>
+
+        </ion-card-content>
+
+
+
+      </ion-col>
+
+
+
+    </ion-row>
+
+
+
+
+
+
+
+
+
+
+  </form>
+
+
+<ion-item>
+  <ion-label> VetorIniciado :{{vetorCopia}} </ion-label>
+</ion-item>
+<ion-item>
+ <ion-label> Forms :
+  {{formsOrdenacao.tipoDeValores}} + {{formsOrdenacao.tipoOrdenacao}}</ion-label>
+</ion-item>
+
+
+<ion-item>
+  <ion-label> Novo vetor :
+   {{vetorOrdenado}}</ion-label>
+ </ion-item>
+
+ <ion-item>
+  <ion-label> Trocas
+   {{trocasFora}}</ion-label>
+ </ion-item>
+
+
+ <ion-item>
+  <ion-label> Tempo final
+   {{tempoFinal}}</ion-label>
+ </ion-item>
+ <ion-item>
+  <ion-label> Tamanho do iniciado : {{vetorCopia.length}} </ion-label>
+</ion-item>
+ <textarea name="vetorCopia" id="" cols="30" rows="10">
+  {{vetorCopia}}
+ </textarea>
+
+
+
+</ion-content>
+
+
+
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" color="danger" [disabled]="!form.valid" (click)="resetForms()"> Resetar
+
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="success" [disabled]="!form.valid" (click)="iniciar(formsOrdenacao)"> Testar
+
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

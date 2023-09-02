@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Questão 1C</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Tamanho da sequência:</ion-label>
+    <ion-select [(ngModel)]="numElements">
+      <ion-select-option value="1000">1000 itens</ion-select-option>
+      <ion-select-option value="100000">10000 itens</ion-select-option>
+      <ion-select-option value="5000000">5000000 itens</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="generateRandomSequence(numElements)">Gerar Sequência</ion-button>
+
+  <ion-item *ngIf="sequence.length > 0">
+    <ion-label>Sequência gerada:</ion-label>
+    <ion-textarea readonly>{{ sequence }}</ion-textarea>
+  </ion-item>
+
+  <ion-button expand="full" (click)="quickSort()" [disabled]="sequence.length === 0">Ordenar</ion-button>
+
+  <ion-item *ngIf="sortedSequence.length > 0">
+    <ion-label>Sequência ordenada:</ion-label>
+    <ion-textarea readonly>{{ sortedSequence }}</ion-textarea>
+  </ion-item>
+
+  <ion-item *ngIf="sortedSequence.length > 0">
+    <ion-label>Trocas realizadas:</ion-label>
+    <ion-text>{{ swaps }}</ion-text>
+  </ion-item>
+
+  <ion-item *ngIf="iterationResults.length > 0">
+    <ion-label>Resultados das iterações:</ion-label>
+    <ion-list>
+      <ion-item *ngFor="let result of iterationResults">
+        <ion-label>Tipo: {{ result.type }}</ion-label>
+        <ion-label>Número de elementos: {{ result.numElements }}</ion-label>
+        <ion-label>Trocas: {{ result.swaps }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-item>
+
+  <ion-item *ngIf="history.length > 0">
+    <ion-label>Histórico de iterações:</ion-label>
+    <ion-list>
+      <ion-item *ngFor="let iteration of history">
+        <ion-label>Iteração:</ion-label>
+        <ion-list>
+          <ion-item *ngFor="let result of iteration">
+            <ion-label>Tipo: {{ result.type }}</ion-label>
+            <ion-label>Número de elementos: {{ result.numElements }}</ion-label>
+            <ion-label>Trocas: {{ result.swaps }}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+  </ion-item>
+
+  <ion-button expand="full" (click)="reset()" [disabled]="sequence.length === 0">Resetar</ion-button>
+
+
+
+</ion-content>

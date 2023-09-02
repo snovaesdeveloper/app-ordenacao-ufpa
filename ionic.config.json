@@ -1,0 +1,7 @@
+{
+  "name": "Trabalho-Ordenacao",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
